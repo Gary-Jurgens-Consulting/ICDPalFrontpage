@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICDPal - AI Powered ICD Coding Assistant</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --primary-hover: #0056b3;
+            --text-color: #333;
+            --heading-color: #2c3e50;
+            --bg-color: #f0f2f5;
+            --white: #ffffff;
+            --success: #28a745;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --gray-light: #e9ecef;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        #app {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--white);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        .nav-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+
+        .nav-btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--white) 0%, #e3f2fd 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            color: var(--heading-color);
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #555;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+            margin-top: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+        
+        .hero-image:hover {
+            transform: translateY(-5px);
+        }
+
+        .cta-btn {
+            background-color: var(--success);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.2s;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+            background-color: #218838;
+        }
+
+        /* Section Commons */
+        section {
+            padding: 5rem 2rem;
+        }
+        
+        h2 {
+            text-align: center;
+            color: var(--heading-color);
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--white);
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .feature-card {
+            background-color: var(--white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid var(--gray-light);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: var(--primary-color);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background-color: #f8f9fa;
+        }
+
+        .pricing-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .plan-card {
+            background: white;
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            text-align: center;
+            border: 1px solid #e1e1e1;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--primary-color);
+        }
+        
+        .plan-card.featured {
+            border: 2px solid var(--primary-color);
+            transform: scale(1.02);
+            z-index: 10;
+        }
+        
+        .plan-card.featured:hover {
+            transform: scale(1.02) translateY(-5px);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 40px;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .plan-name {
+            font-size: 1.5rem;
+            color: var(--heading-color);
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin: 1.5rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .currency {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            margin-right: 5px;
+        }
+
+        .period {
+            font-size: 1rem;
+            color: #888;
+            align-self: flex-end;
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+        
+        .price-usd {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: -1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .plan-features {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+            color: #555;
+            text-align: left;
+            flex-grow: 1;
+        }
+
+        .plan-features li {
+            margin: 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .plan-features li::before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .subscribe-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.2s;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            box-sizing: border-box;
+            margin-top: auto;
+        }
+
+        .subscribe-btn:hover {
+            background-color: var(--primary-hover);
+        }
+        
+        .subscribe-btn.outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .subscribe-btn.outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .footer p {
+            opacity: 0.6;
+            margin-top: 2rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        
+        .footer-link:hover {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero-container {
+                padding: 1rem;
+            }
+            .plans-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+            }
+            .plan-card.featured {
+                transform: none;
+            }
+            .plan-card.featured:hover {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <nav class="navbar">
+            <div class="nav-container">
+                <img src="./assets/logo.svg" alt="ICDPal Logo" class="logo">
+                <a :href="loginUrl" class="nav-btn">Login</a>
+            </div>
+        </nav>
+
+        <header class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1>{{ heroTitle }}</h1>
+                    <p>{{ heroSubtitle }}</p>
+                    <a :href="loginUrl" class="cta-btn">Start Free Trial</a>
+                </div>
+                <img src="./assets/hero.svg" alt="Dashboard Preview" class="hero-image">
+            </div>
+        </header>
+
+        <section class="features">
+            <div class="features-container">
+                <h2>Why Choose ICDPal?</h2>
+                <div class="features-grid">
+                    <div v-for="feature in features" :key="feature.id" class="feature-card">
+                        <img :src="feature.icon" :alt="feature.title" class="feature-icon">
+                        <h3>{{ feature.title }}</h3>
+                        <p>{{ feature.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="pricing">
+            <div class="pricing-container">
+                <h2>Simple, Transparent Pricing</h2>
+                <div class="plans-grid">
+                    <div v-for="plan in plans" :key="plan.id" class="plan-card" :class="{ 'featured': plan.isFeatured }">
+                        <div v-if="plan.isFeatured" class="popular-badge">POPULAR</div>
+                        <h3 class="plan-name">{{ plan.name }}</h3>
+                        <div class="price">
+                            <span class="currency" v-if="plan.price !== 'Free'">{{ plan.currency }}</span>
+                            {{ plan.price }}
+                            <span v-if="plan.billingCycle" class="period">/ {{ plan.billingCycle }}</span>
+                        </div>
+                        <div class="price-usd" v-if="plan.price !== 'Free'">
+                            ${{ plan.priceUsd }} USD
+                        </div>
+                        <ul class="plan-features">
+                            <li v-for="(feature, index) in plan.features" :key="index">{{ feature }}</li>
+                        </ul>
+                        <a :href="loginUrl" class="subscribe-btn" :class="{ 'outline': !plan.isFeatured }">
+                            {{ plan.cta }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Terms of Service</a>
+                <a href="#" class="footer-link">Support</a>
+                <a href="#" class="footer-link">Contact</a>
+            </div>
+            <p>&copy; {{ currentYear }} ICDPal. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        const { createApp, ref } = Vue
+
+        createApp({
+            setup() {
+                const loginUrl = ref('/login')
+                const heroTitle = ref('AI Powered ICD Coding for Modern Healthcare')
+                const heroSubtitle = ref('Stop wasting hours flipping through codebooks. Our advanced Artificial Intelligence understands your clinical diagnosis in natural language and suggests accurate ICD-10 and ICD-11 codes instantly. Increase coding precision, reduce claim rejections, and save valuable time for what matters most—patient care.')
+                const currentYear = new Date().getFullYear()
+
+                const features = ref([
+                    {
+                        id: 1,
+                        title: 'AI (Artificial Intelligence) Powered Search',
+                        description: 'Forget strict keyword matching. Our state-of-the-art AI understands medical context, synonyms, and abbreviations to find the perfect code every time.',
+                        icon: './assets/feature_search.svg'
+                    },
+                    {
+                        id: 2,
+                        title: 'Streamlined Diagnosis Workflow',
+                        description: 'Create, validate, and manage patient diagnoses with an intuitive interface designed by clinicians, for clinicians. Compliance has never been this easy.',
+                        icon: './assets/feature_diagnosis.svg'
+                    },
+                    {
+                        id: 3,
+                        title: 'Enterprise-Grade Security',
+                        description: 'Your patient data is safeguarded with industry-leading encryption and strict HIPAA compliance protocols. Secure, private, and reliable.',
+                        icon: './assets/feature_secure.svg'
+                    }
+                ])
+                
+                // Pricing Plans
+                const plans = ref([
+                    {
+                        id: 0,
+                        name: 'Free Trial',
+                        price: 'Free',
+                        priceUsd: '0',
+                        currency: '',
+                        billingCycle: '7 days',
+                        isFeatured: false,
+                        cta: 'Start Now',
+                        features: [
+                            'Single User License',
+                            '30 AI Credits',
+                            'Unlimited Patients',
+                            'Full Feature Access',
+                            'No Credit Card Required'
+                        ]
+                    },
+                    {
+                        id: 1,
+                        name: 'Starter',
+                        price: '350',
+                        priceUsd: '25',
+                        currency: 'R',
+                        billingCycle: 'month',
+                        isFeatured: false,
+                        cta: 'Get Started',
+                        features: [
+                            'Single User License',
+                            '200 AI Queries / month',
+                            'Unlimited Patients',
+                            'ICD-10 Code Search',
+                            'Email Support'
+                        ]
+                    },
+                    {
+                        id: 4,
+                        name: 'Small Practice',
+                        price: '500',
+                        priceUsd: '35',
+                        currency: 'R',
+                        billingCycle: 'month',
+                        isFeatured: false,
+                        cta: 'Get Started',
+                        features: [
+                            'Up to 5 Users',
+                            '400 AI Credits / month',
+                            'Unlimited Patients',
+                            'Team Management',
+                            'Standard Support'
+                        ]
+                    },
+                    {
+                        id: 5,
+                        name: 'Medium Practice',
+                        price: '750',
+                        priceUsd: '40',
+                        currency: 'R',
+                        billingCycle: 'month',
+                        isFeatured: false,
+                        cta: 'Get Started',
+                        features: [
+                            'Up to 10 Users',
+                            '600 AI Credits / month',
+                            'Unlimited Patients',
+                            'Advanced Reporting',
+                            'Priority Support'
+                        ]
+                    },
+                    {
+                        id: 2,
+                        name: 'Practice Pro',
+                        price: '950',
+                        priceUsd: '50',
+                        currency: 'R',
+                        billingCycle: 'month',
+                        isFeatured: true,
+                        cta: 'Subscribe',
+                        features: [
+                            'Unlimited Users',
+                            '800 AI Credits / month',
+                            'Unlimited Patients',
+                            'Priority Support',
+                            'Diagnosis History Tracking'
+                        ]
+                    },
+                    {
+                        id: 3,
+                        name: 'AI Credits Add-on Bundle',
+                        price: '199',
+                        priceUsd: '10',
+                        currency: 'R',
+                        billingCycle: null,
+                        isFeatured: false,
+                        cta: 'Buy Credits',
+                        features: [
+                            '100 AI Queries',
+                            'Valid for 1 Year',
+                            'Pay As You Go',
+                            'No Monthly Commitment',
+                            'Top up anytime'
+                        ]
+                    }
+                ])
+
+                return {
+                    loginUrl,
+                    heroTitle,
+                    heroSubtitle,
+                    features,
+                    plans,
+                    currentYear
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>

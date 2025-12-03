@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <!-- Main Background -->
+  <!-- <rect x="0" y="0" width="800" height="500" fill="#f8f9fa" rx="8"/> -->
+
+  <!-- Main Content Card -->
+  <g transform="translate(20, 20)">
+    <rect x="0" y="0" width="760" height="460" fill="#ffffff" rx="8" filter="url(#shadow)"/>
+    
+    <!-- Top Section: Add Diagnosis -->
+    <g transform="translate(30, 30)">
+      <text x="0" y="0" font-family="Segoe UI, system-ui, sans-serif" font-size="18" font-weight="bold" fill="#2c3e50">Add Diagnosis</text>
+      
+      <text x="0" y="30" font-family="Segoe UI, system-ui, sans-serif" font-size="14" fill="#6c757d">Clinical Description:</text>
+      
+      <!-- Text Area -->
+      <rect x="0" y="45" width="700" height="60" rx="4" fill="#ffffff" stroke="#ced4da" stroke-width="1"/>
+      <text x="15" y="80" font-family="Segoe UI, system-ui, sans-serif" font-size="14" fill="#adb5bd">e.g., Type 2 diabetes with kidney complications...</text>
+      
+      <!-- Button -->
+      <rect x="540" y="120" width="160" height="36" rx="4" fill="#007bff"/>
+      <text x="620" y="143" font-family="Segoe UI, system-ui, sans-serif" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">Generate ICD Codes</text>
+    </g>
+
+    <!-- Divider -->
+    <line x1="30" y1="180" x2="730" y2="180" stroke="#dee2e6" stroke-width="1"/>
+
+    <!-- Bottom Section: Medical History -->
+    <g transform="translate(30, 200)">
+      <text x="0" y="0" font-family="Segoe UI, system-ui, sans-serif" font-size="18" font-weight="bold" fill="#2c3e50">Medical History</text>
+      <line x1="0" y1="10" x2="130" y2="10" stroke="#007bff" stroke-width="3"/>
+
+      <!-- Item 1 -->
+      <g transform="translate(0, 35)">
+        <rect x="0" y="0" width="700" height="70" rx="4" fill="#ffffff" stroke="#e9ecef" stroke-width="1"/>
+        <path d="M 4 1 L 4 69" stroke="#007bff" stroke-width="4" stroke-linecap="round"/> 
+        
+        <!-- Badges -->
+        <rect x="15" y="15" width="60" height="20" rx="4" fill="#d4edda"/>
+        <text x="45" y="29" font-family="Segoe UI, system-ui, sans-serif" font-size="10" font-weight="bold" fill="#155724" text-anchor="middle">PRIMARY</text>
+        
+        <rect x="85" y="15" width="50" height="20" rx="4" fill="#e2e6ea"/>
+        <text x="110" y="29" font-family="Segoe UI, system-ui, sans-serif" font-size="10" fill="#495057" text-anchor="middle">E10.10</text>
+        
+        <rect x="145" y="15" width="50" height="20" rx="4" fill="#e2e6ea"/>
+        <text x="170" y="29" font-family="Segoe UI, system-ui, sans-serif" font-size="10" fill="#495057" text-anchor="middle">SA10.0</text>
+        
+        <!-- Description -->
+        <text x="15" y="55" font-family="Segoe UI, system-ui, sans-serif" font-size="14" fill="#343a40">Type 1 diabetes mellitus with ketoacidosis without coma</text>
+        
+        <!-- Date -->
+        <text x="685" y="30" font-family="Segoe UI, system-ui, sans-serif" font-size="12" fill="#adb5bd" text-anchor="end">2025/11/26</text>
+      </g>
+
+      <!-- Item 2 -->
+      <g transform="translate(0, 115)">
+        <rect x="0" y="0" width="700" height="70" rx="4" fill="#ffffff" stroke="#e9ecef" stroke-width="1"/>
+        <path d="M 4 1 L 4 69" stroke="#007bff" stroke-width="4" stroke-linecap="round"/>
+        
+        <!-- Badges -->
+        <rect x="15" y="15" width="60" height="20" rx="4" fill="#d4edda"/>
+        <text x="45" y="29" font-family="Segoe UI, system-ui, sans-serif" font-size="10" font-weight="bold" fill="#155724" text-anchor="middle">PRIMARY</text>
+        
+        <rect x="85" y="15" width="50" height="20" rx="4" fill="#e2e6ea"/>
+        <text x="110" y="29" font-family="Segoe UI, system-ui, sans-serif" font-size="10" fill="#495057" text-anchor="middle">E10.69</text>
+        
+        <rect x="145" y="15" width="50" height="20" rx="4" fill="#e2e6ea"/>
+        <text x="170" y="29" font-family="Segoe UI, system-ui, sans-serif" font-size="10" fill="#495057" text-anchor="middle">SA10</text>
+        
+        <!-- Description -->
+        <text x="15" y="55" font-family="Segoe UI, system-ui, sans-serif" font-size="14" fill="#343a40">Type 1 diabetes mellitus with other specified complications</text>
+
+         <!-- Date -->
+        <text x="685" y="30" font-family="Segoe UI, system-ui, sans-serif" font-size="12" fill="#adb5bd" text-anchor="end">2025/11/26</text>
+      </g>
+      
+      <!-- Sub Item 3 -->
+      <g transform="translate(20, 195)">
+        <rect x="0" y="0" width="680" height="60" rx="4" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1"/>
+        <path d="M 4 1 L 4 59" stroke="#6c757d" stroke-width="4" stroke-linecap="round"/>
+        
+         <!-- Badges -->
+        <rect x="15" y="10" width="70" height="20" rx="4" fill="#fff3cd"/>
+        <text x="50" y="24" font-family="Segoe UI, system-ui, sans-serif" font-size="10" font-weight="bold" fill="#856404" text-anchor="middle">SECONDARY</text>
+        
+         <rect x="95" y="10" width="50" height="20" rx="4" fill="#e2e6ea"/>
+        <text x="120" y="24" font-family="Segoe UI, system-ui, sans-serif" font-size="10" fill="#495057" text-anchor="middle">K86.89</text>
+        
+        <!-- Description -->
+        <text x="15" y="48" font-family="Segoe UI, system-ui, sans-serif" font-size="14" fill="#343a40">Atrophy of pancreas (Other specified diseases of pancreas)</text>
+
+        <!-- Date -->
+        <text x="665" y="24" font-family="Segoe UI, system-ui, sans-serif" font-size="12" fill="#adb5bd" text-anchor="end">2025/11/26</text>
+      </g>
+
+    </g>
+  </g>
+</svg>
