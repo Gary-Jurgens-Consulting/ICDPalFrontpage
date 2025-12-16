@@ -409,7 +409,7 @@
         <nav class="navbar">
             <div class="nav-container">
                 <img src="./assets/logo.svg" alt="ICDPal Logo" class="logo">
-                <a :href="portal.icdpal.com" class="nav-btn">Login</a>
+                <a href="https://portal.icdpal.com" class="nav-btn">Login</a>
             </div>
         </nav>
 
@@ -418,7 +418,7 @@
                 <div class="hero-content">
                     <h1>{{ heroTitle }}</h1>
                     <p>{{ heroSubtitle }}</p>
-                    <a :href="portal.icdpal.com" class="cta-btn">Start Free Trial</a>
+                    <a href="https://portal.icdpal.com" class="cta-btn">Start Free Trial</a>
                 </div>
                 <img src="./assets/hero.svg" alt="Dashboard Preview" class="hero-image">
             </div>
@@ -455,7 +455,7 @@
                         <ul class="plan-features">
                             <li v-for="(feature, index) in plan.features" :key="index">{{ feature }}</li>
                         </ul>
-                        <a :href="loginUrl" class="subscribe-btn" :class="{ 'outline': !plan.isFeatured }">
+                        <a href="https://loginUrl" class="subscribe-btn" :class="{ 'outline': !plan.isFeatured }">
                             {{ plan.cta }}
                         </a>
                     </div>
@@ -479,7 +479,7 @@
 
         createApp({
             setup() {
-                const loginUrl = ref('/login')
+                const loginUrl = ref('')
                 const heroTitle = ref('AI Powered ICD Coding for Modern Healthcare')
                 const heroSubtitle = ref('Stop wasting hours flipping through codebooks. Our advanced Artificial Intelligence understands your clinical diagnosis in natural language and suggests accurate ICD-10 and ICD-11 codes instantly. Increase coding precision, reduce claim rejections, and save valuable time for what matters most—patient care.')
                 const currentYear = new Date().getFullYear()
