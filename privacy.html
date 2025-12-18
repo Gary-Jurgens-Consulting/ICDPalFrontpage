@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - ICDPal</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --secondary: #64748b;
+            --border: #e2e8f0;
+        }
+        body { margin: 0; font-family: 'Inter', sans-serif; color: #1e293b; line-height: 1.6; background: #f8fafc; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+        .narrow { max-width: 800px; }
+        .navbar { padding: 1.25rem 0; background: white; border-bottom: 1px solid var(--border); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo-wrapper { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--dark); }
+        .logo { height: 32px; }
+        .logo-text { font-size: 1.5rem; font-weight: 700; }
+        .nav-link { text-decoration: none; color: var(--primary); font-weight: 600; }
+        .content-wrapper { padding: 4rem 0; }
+        h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--dark); }
+        .last-updated { color: var(--secondary); margin-bottom: 3rem; }
+        
+        .version-badge { display: inline-block; padding: 0.25rem 0.75rem; background: #e2e8f0; color: #475569; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; margin-bottom: 1rem; }
+        section { margin-bottom: 2.5rem; background: white; padding: 2.5rem; border-radius: 1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--dark); }
+        h3 { font-size: 1.125rem; font-weight: 700; margin: 1.5rem 0 0.75rem; color: #1e293b; }
+        ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+        li { margin-bottom: 0.5rem; }
+        p { margin-bottom: 1rem; }
+        a { color: var(--primary); text-decoration: none; }
+
+        .footer { padding: 5rem 0 2rem; background: #020617; color: white; margin-top: auto; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem; text-align: left; }
+        .footer-links h4 { font-size: 1rem; font-weight: 700; margin-bottom: 1.5rem; }
+        .footer-links a { display: block; color: #94a3b8; text-decoration: none; margin-bottom: 0.75rem; }
+        .footer-bottom { padding-top: 2rem; border-top: 1px solid #1e293b; text-align: center; color: #64748b; font-size: 0.875rem; }
+        .grayscale { filter: brightness(0) invert(1); }
+        .brand-tagline { margin-top: 1rem; color: #94a3b8; }
+        .company-details { margin-top: 1.5rem; color: #64748b; font-size: 0.875rem; }
+
+        @media (max-width: 992px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div id="app" style="display: flex; flex-direction: column; min-height: 100vh;">
+        <nav class="navbar">
+            <div class="container nav-container">
+                <a href="index.html" class="logo-wrapper">
+                    <img src="./assets/logo.svg" alt="ICDPal Logo" class="logo">
+                    <span class="logo-text">ICDPal</span>
+                </a>
+                <a href="index.html" class="nav-link">Back to Home</a>
+            </div>
+        </nav>
+
+        <main class="content-wrapper">
+            <div class="container narrow">
+                <div class="version-badge">Privacy Policy Version 2025 -12</div>
+                <h1>Privacy Policy</h1>
+                <p class="last-updated">Last Updated: December 2025</p>
+
+                <section>
+                    <h2>1. Introduction</h2>
+                    <p>Intelical (Pty) Ltd, trading as ICDPal (“ICDPal”, “we”, “us”, or “our”), is committed to protecting your privacy and personal information. This Privacy Policy explains how we collect, use, store, and protect personal information when you use our software-as-a-service platform (“the Service”).</p>
+                    <p>This Policy is drafted in accordance with the Protection of Personal Information Act, 68 of 2013 (POPIA) and, where applicable, the General Data Protection Regulation (GDPR).</p>
+                </section>
+
+                <section>
+                    <h2>2. Information We Collect</h2>
+                    <h3>2.1 Account Information</h3>
+                    <p>We may collect: Name and surname, Email address, Practice or organisation name, Country and time zone, Login credentials (securely hashed).</p>
+                    
+                    <h3>2.2 Usage and Technical Information</h3>
+                    <p>We may collect: IP address (or country-level location), Device and browser type, Usage logs and feature interactions, Error and performance logs.</p>
+                    
+                    <h3>2.3 Clinical or Textual Input Data</h3>
+                    <p>The Service primarily operates on non-identifiable clinical or administrative descriptions. The entry of patient identifiers (such as a patient name or internal reference number) is optional, not required for the core functionality of the Service, and is provided solely as a user convenience feature.</p>
+                    <p>Users are responsible for ensuring that:</p>
+                    <ul>
+                        <li>Any personal or patient information entered is lawfully obtained;</li>
+                        <li>Its use complies with applicable privacy and healthcare laws; and</li>
+                        <li>Data is appropriately anonymised or minimised where required.</li>
+                    </ul>
+                    <p>Where patient identifiers are entered, ICDPal applies reasonable technical and organisational security measures to protect such data in accordance with this Privacy Policy.</p>
+                    
+                    <h3>2.4 Billing Information</h3>
+                    <p>Payment processing is handled by third-party payment providers. ICDPal does not store full payment card details.</p>
+                </section>
+
+                <section>
+                    <h2>3. POPIA Roles, Data Minimisation, and Health Information Handling</h2>
+                    <h3>3.1 POPIA Role Clarification</h3>
+                    <p>For purposes of the Protection of Personal Information Act, 68 of 2013 (POPIA): ICDPal acts as an operator in respect of personal and patient information processed through the Service. The user (including the healthcare practice or organisation) acts as the responsible party, determining the purpose and manner of such processing.</p>
+                    
+                    <h3>3.2 Data Minimisation Best Practice</h3>
+                    <p>The Service is designed to function without patient-identifying information. Users are encouraged to: Enter only the minimum information necessary; Avoid direct patient identifiers unless required for internal workflows; and Prefer anonymised or pseudonymised data where possible.</p>
+                    
+                    <h3>3.3 Health Information and Safe-Harbour Alignment</h3>
+                    <p>Where health-related or patient information is processed, ICDPal applies reasonable safeguards aligned with widely accepted healthcare data-protection principles. Nothing in this Privacy Policy constitutes an agreement that ICDPal is a “covered entity” or “business associate” under HIPAA. References to healthcare-style safeguards reflect best-practice standards only.</p>
+                </section>
+
+                <section>
+                    <h2>4. Purpose of Processing</h2>
+                    <p>We process personal information to: Provide and operate the Service; Authenticate users and manage accounts; Generate AI-assisted coding suggestions; Manage subscriptions and billing; Provide customer support; Maintain security, system integrity, and compliance.</p>
+                </section>
+
+                <section>
+                <h2>5. Lawful Basis for Processing</h2>
+<p>
+Processing of personal information is carried out in accordance with the
+Protection of Personal Information Act, 68 of 2013 (POPIA) and, where applicable,
+the General Data Protection Regulation (GDPR), based on one or more of the
+following lawful grounds:
+</p>
+<ul>
+    <li>Performance of a contract;</li>
+    <li>Legitimate interests pursued by ICDPal or its users;</li>
+    <li>Compliance with legal obligations; and</li>
+    <li>User consent, where required by law.</li>
+</ul>
+<p>
+ICDPal applies reasonable and best-effort measures to ensure that personal
+information is processed lawfully, fairly, and transparently in accordance with
+applicable data protection laws.
+</p>
+                </section>
+
+                <section>
+                    <h2>6. AI and Automated Processing</h2>
+                    <p>AI-generated outputs are produced from user-provided inputs. No fully automated decisions with legal or clinical effect are made. Human review is required before use.</p>
+                </section>
+
+                <section>
+                    <h2>7. Data Sharing and Third Parties</h2>
+                    <p>We may share data with: Hosting and cloud infrastructure providers; AI Providers; Payment processors; Analytics and monitoring providers; Regulatory or legal authorities where required by law, To enable the functioning of this service</p>
+                </section>
+
+                <section>
+                    <h2>8. International Data Transfers</h2>
+                    <p>Where data is processed outside South Africa, appropriate safeguards are implemented to ensure compliance with POPIA and, where applicable, GDPR.</p>
+                </section>
+
+                <section>
+                    <h2>9. Data Retention</h2>
+                    <p>Personal information is retained only for as long as necessary to provide the Service, meet legal obligations, or resolve disputes.</p>
+                </section>
+
+                <section>
+                    <h2>10. Data Security</h2>
+                    <p>We implement reasonable technical and organisational measures, including encryption in transit and at rest, access controls, and monitoring. No system can be guaranteed fully secure.</p>
+                </section>
+
+                <section>
+                    <h2>11. Your Rights</h2>
+                    <p>Subject to applicable law, you have the right to access your personal information, request correction or deletion, object to processing, or lodge a complaint with the Information Regulator of South Africa.</p>
+                </section>
+
+                <section>
+                    <h2>12. Cookies and Tracking</h2>
+                    <p>We use essential cookies to support authentication, security, and performance. We do not use intrusive tracking without consent.</p>
+                </section>
+
+                <section>
+                    <h2>13. Children’s Information</h2>
+                    <p>The Service is not intended for use by individuals under the age of 18.</p>
+                </section>
+
+                <section>
+                    <h2>14. Changes to This Policy</h2>
+                    <p>This Privacy Policy may be updated from time to time. Continued use of the Service constitutes acceptance of the revised Policy.</p>
+                </section>
+
+                <section>
+                    <h2>15. Contact Information</h2>
+                    <p>For privacy-related questions or concerns, contact:</p>
+                    <p><strong>ICDPal</strong><br>
+                    Cape Town, Western Cape, South Africa<br>
+                    Email: <a href="mailto:privacy@intelical.com">privacy@intelical.com</a></p>
+                </section>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="logo-wrapper">
+                            <img src="./assets/logo.svg" alt="ICDPal Logo" class="logo grayscale">
+                            <span class="logo-text" style="color: white;">ICDPal</span>
+                        </div>
+                        <p class="brand-tagline">Empowering healthcare with AI precision.</p>
+                        <div class="company-details">
+                            <p>Intelical (PTY) LTD T/A ICDPal.com</p>
+                            <p>Cape Town, South Africa</p>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Product</h4>
+                        <a href="index.html#features">Features</a>
+                        <a href="index.html#pricing">Pricing</a>
+                        <a href="contact.html">Contact Us</a>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Company</h4>
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; {{ currentYear }} ICDPal. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        const { createApp } = Vue
+        createApp({
+            setup() {
+                return { currentYear: new Date().getFullYear() }
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions - ICDPal</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --secondary: #64748b;
+            --border: #e2e8f0;
+        }
+        body { margin: 0; font-family: 'Inter', sans-serif; color: #1e293b; line-height: 1.6; background: #f8fafc; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+        .narrow { max-width: 800px; }
+        .navbar { padding: 1.25rem 0; background: white; border-bottom: 1px solid var(--border); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo-wrapper { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--dark); }
+        .logo { height: 32px; }
+        .logo-text { font-size: 1.5rem; font-weight: 700; }
+        .nav-link { text-decoration: none; color: var(--primary); font-weight: 600; }
+        .content-wrapper { padding: 4rem 0; }
+        h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--dark); }
+        .last-updated { color: var(--secondary); margin-bottom: 3rem; }
+        section { margin-bottom: 2.5rem; background: white; padding: 2.5rem; border-radius: 1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1.25rem; color: var(--dark); }
+        h3 { font-size: 1.125rem; font-weight: 700; margin: 1.5rem 0 0.75rem; color: #1e293b; }
+        ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+        li { margin-bottom: 0.5rem; }
+        p { margin-bottom: 1rem; }
+
+        .footer { padding: 5rem 0 2rem; background: #020617; color: white; margin-top: auto; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem; text-align: left; }
+        .footer-links h4 { font-size: 1rem; font-weight: 700; margin-bottom: 1.5rem; }
+        .footer-links a { display: block; color: #94a3b8; text-decoration: none; margin-bottom: 0.75rem; }
+        .footer-bottom { padding-top: 2rem; border-top: 1px solid #1e293b; text-align: center; color: #64748b; font-size: 0.875rem; }
+        .grayscale { filter: brightness(0) invert(1); }
+        .brand-tagline { margin-top: 1rem; color: #94a3b8; }
+        .company-details { margin-top: 1.5rem; color: #64748b; font-size: 0.875rem; }
+
+        @media (max-width: 992px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div id="app" style="display: flex; flex-direction: column; min-height: 100vh;">
+        <nav class="navbar">
+            <div class="container nav-container">
+                <a href="index.html" class="logo-wrapper">
+                    <img src="./assets/logo.svg" alt="ICDPal Logo" class="logo">
+                    <span class="logo-text">ICDPal</span>
+                </a>
+                <a href="index.html" class="nav-link">Back to Home</a>
+            </div>
+        </nav>
+
+        <main class="content-wrapper">
+            <div class="container narrow">
+                <div style="display: inline-block; padding: 0.25rem 0.75rem; background: #e2e8f0; color: #475569; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; margin-bottom: 1rem;">Terms Version 2025 -12</div>
+                <h1>Terms and Conditions</h1>
+                <p class="last-updated">Last Updated: December 2025</p>
+
+                <section>
+                    <h2>1. Acceptance of Terms</h2>
+                    <p>By accessing or using ICDPal (“the Service”), you agree to be bound by these Terms and Conditions (“Terms”). If you do not agree to these Terms, you must not access or use the Service.</p>
+                </section>
+
+                <section>
+                    <h2>2. Description of Service</h2>
+                    <p>ICDPal is a software-as-a-service (SaaS) platform providing AI-assisted medical coding support for ICD-10 and ICD-11.</p>
+                    <p>The Service is a decision-support tool only and does not replace professional medical judgment, certified coding expertise, or official coding guidelines issued by medical aids, regulators, or professional bodies.</p>
+                </section>
+
+                <section>
+                    <h2>3. User Responsibilities</h2>
+                    <p>You are solely responsible for verifying and validating all codes suggested by the Service before use.</p>
+                    <p>ICDPal does not guarantee the accuracy, completeness, or suitability of any AI-generated output.</p>
+                    <p>You agree not to rely on the Service as the sole basis for clinical, billing, or reimbursement decisions.</p>
+                </section>
+
+                <section>
+                    <h2>4. Data Privacy and Compliance</h2>
+                    <p>You warrant that you have the lawful right and required consent to submit any clinical or medical information to the Service.</p>
+                    <p>You agree to comply with all applicable data protection and healthcare privacy laws, including POPIA, GDPR, and HIPAA, where applicable.</p>
+                    <p>Our processing of personal data is governed by our Privacy Policy, which forms part of these Terms.</p>
+                </section>
+
+                <section>
+                    <h2>5. Accounts and Security</h2>
+                    <p>You are responsible for maintaining the confidentiality of your account credentials.</p>
+                    <p>All activity conducted under your account is your responsibility.</p>
+                    <p>We reserve the right to suspend or terminate accounts that violate these Terms or applicable law.</p>
+                </section>
+
+                <section>
+                    <h2>6. Subscriptions, Credits, and Billing</h2>
+                    <h3>6.1 Subscription Plans</h3>
+                    <p>Certain features require a paid subscription. Subscription fees are billed in advance and renew automatically unless cancelled prior to renewal.</p>
+                    
+                    <h3>6.2 Usage Credits</h3>
+                    <p>Some features consume usage-based credits (“Credits”). Credits may be included in a subscription or purchased separately. Credits have no cash value, are non-transferable, and may not be resold.</p>
+                    
+                    <h3>6.3 Refund Policy</h3>
+                    <p>Subscription fees are non-refundable, including partial periods, unused time, or downgrades.</p>
+                    <p>Unused purchased (stand-alone) credits may, at ICDPal’s sole discretion, be eligible for a refund provided that:</p>
+                    <ul>
+                        <li>The credits were purchased directly (not promotional or bundled),</li>
+                        <li>The credits remain unused, and</li>
+                        <li>The refund request is made within a reasonable time after purchase.</li>
+                    </ul>
+                    <p>Used credits are not refundable.</p>
+                    
+                    <h3>6.4 Free Trials and Promotional Credits</h3>
+                    <p>Free trials and promotional credits are provided without monetary value and are not refundable.</p>
+                </section>
+
+                <section>
+                    <h2>7. Cancellation and Termination</h2>
+                    <p>You may cancel your subscription at any time via your account settings.</p>
+                    <p>Cancellation prevents future renewals but does not entitle you to a refund for the current billing period.</p>
+                    <p>Upon termination, unused promotional credits are forfeited. Purchased unused credits are governed by Section 6.3.</p>
+                </section>
+
+                <section>
+                    <h2>8. Service Availability</h2>
+                    <p>The Service is provided on an “as-is” and “as-available” basis. We do not guarantee uninterrupted or error-free operation and may modify or discontinue features with reasonable notice.</p>
+                </section>
+
+                <section>
+                    <h2>9. Limitation of Liability</h2>
+                    <p>To the maximum extent permitted by law:</p>
+                    <p>ICDPal shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of revenue, data, or billing outcomes.</p>
+                    <p>ICDPal’s total liability for any claim shall not exceed the fees paid by you in the three (3) months preceding the claim.</p>
+                </section>
+
+                <section>
+                    <h2>10. No Medical, Legal, or Billing Advice</h2>
+                    <p>ICDPal does not provide medical advice, legal advice, or guaranteed billing outcomes. All outputs are informational only.</p>
+                </section>
+
+                <section>
+                    <h2>11. Changes to These Terms</h2>
+                    <p>We may update these Terms from time to time. Continued use of the Service after changes take effect constitutes acceptance of the revised Terms.</p>
+                </section>
+
+                <section>
+                    <h2>12. Governing Law, Jurisdiction, and Dispute Resolution</h2>
+                    <h3>12.1 Governing Law</h3>
+                    <p>These Terms are governed by and construed in accordance with the laws of the Republic of South Africa, without regard to conflict-of-law principles.</p>
+                    
+                    <h3>12.2 Jurisdiction and Domicilium</h3>
+                    <p>All disputes, claims, or proceedings arising out of or relating to these Terms or the Service shall be instituted exclusively in the courts of the Republic of South Africa, with domicilium citandi et executandi at Cape Town, Western Cape, South Africa, and you submit to the exclusive jurisdiction of such courts.</p>
+                    
+                    <h3>12.3 Internal Resolution First</h3>
+                    <p>Before instituting legal proceedings, the parties agree to attempt in good faith to resolve disputes through ICDPal’s internal support or grievance processes, where reasonable.</p>
+                    
+                    <h3>12.4 Optional Independent Arbitration</h3>
+                    <p>If internal resolution fails, the parties may, by mutual written agreement, refer the dispute to an independent arbitrator appointed jointly. Arbitration is not mandatory. Arbitration shall occur in Cape Town, South Africa. South African law shall apply. Either party may decline arbitration and proceed to court.</p>
+                    
+                    <h3>12.5 No Forced Arbitration</h3>
+                    <p>Nothing in these Terms limits a consumer’s right to approach a court or relevant consumer protection body under the Consumer Protection Act, 68 of 2008.</p>
+                </section>
+
+                <section>
+                    <h2>13. Consumer Rights Savings Clause</h2>
+                    <p>Nothing in these Terms is intended to limit or waive any consumer rights under the Consumer Protection Act, 68 of 2008, or other applicable South African legislation. Any provision inconsistent with the CPA shall be interpreted to the minimum extent necessary to comply with the Act.</p>
+                </section>
+
+                <section>
+                    <h2>14. Severability and CPA Override</h2>
+                    <p>If any provision of these Terms is found to be invalid or unenforceable, that provision shall be severed to the extent of its invalidity, and the remaining provisions shall remain in full force and effect, subject always to compliance with the CPA.</p>
+                </section>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="logo-wrapper">
+                            <img src="./assets/logo.svg" alt="ICDPal Logo" class="logo grayscale">
+                            <span class="logo-text" style="color: white;">ICDPal</span>
+                        </div>
+                        <p class="brand-tagline">Empowering healthcare with AI precision.</p>
+                        <div class="company-details">
+                            <p>Intelical (PTY) LTD T/A ICDPal.com</p>
+                            <p>Cape Town, South Africa</p>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Product</h4>
+                        <a href="index.html#features">Features</a>
+                        <a href="index.html#pricing">Pricing</a>
+                        <a href="contact.html">Contact Us</a>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Company</h4>
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; {{ currentYear }} ICDPal. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        const { createApp } = Vue
+        createApp({
+            setup() {
+                return { currentYear: new Date().getFullYear() }
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>
