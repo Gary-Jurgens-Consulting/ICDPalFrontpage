@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - ICDPal</title>
+    <title>Contact Us - ICDPal.com</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -30,7 +31,7 @@
         .lead { font-size: 1.25rem; color: var(--secondary); max-width: 600px; margin: 0 auto; }
         
         .info-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-        .info-card { display: flex; flex-direction: column; align-items: flex-start; text-align: left; background: white; padding: 3rem 2rem; border-radius: 1.5rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); transition: transform 0.2s; }
+        .info-card { display: flex; flex-direction: column; align-items: center; text-align: center; background: white; padding: 3rem 2rem; border-radius: 1.5rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); transition: transform 0.2s; }
         .info-card:hover { transform: translateY(-5px); }
         .info-card .icon { font-size: 2.5rem; margin-bottom: 1.5rem; background: #f1f5f9; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
         .info-card h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--dark); }
@@ -88,7 +89,6 @@
                             <p><strong>Support:</strong> <a :href="'mailto:' + supportEmail" class="email-link">{{ supportEmail || 'Loading...' }}</a></p>
                             <p><strong>Billing:</strong> <a :href="'mailto:' + billingEmail" class="email-link">{{ billingEmail || 'Loading...' }}</a></p>
                             <p><strong>General Inquiries:</strong> <a :href="'mailto:' + infoEmail" class="email-link">{{ infoEmail || 'Loading...' }}</a></p>
-                            <p><strong>Privacy Inquiries:</strong> <a :href="'mailto:' + privacyEmail" class="email-link">{{ privacyEmail || 'Loading...' }}</a></p>
                         </div>
                     </div>
                 </div>
@@ -122,6 +122,9 @@
                     </div>
                 </div>
                 <div class="footer-bottom">
+                    <p style="font-size: 0.75rem; color: #64748b; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                        Clinical decision-support for coding reference only. Not a substitute for medical advice, diagnosis, treatment, or prescribing. Final decision remains with the Medical Practitioner.
+                    </p>
                     <p>&copy; {{ currentYear }} ICDPal. All rights reserved.</p>
                 </div>
             </div>
@@ -136,18 +139,16 @@
                 const supportEmail = ref('')
                 const billingEmail = ref('')
                 const infoEmail = ref('')
-                const privacyEmail = ref('')
 
                 onMounted(() => {
                     setTimeout(() => {
                         supportEmail.value = 'support' + '@' + 'icdpal.com'
                         billingEmail.value = 'billing' + '@' + 'icdpal.com'
                         infoEmail.value = 'info' + '@' + 'icdpal.com'
-                        privacyEmail.value = 'privacy' + '@' + 'icdpal.com'
                     }, 500)
                 })
 
-                return { currentYear, supportEmail, billingEmail, infoEmail, privacyEmail }
+                return { currentYear, supportEmail, billingEmail, infoEmail }
             }
         }).mount('#app')
     </script>
